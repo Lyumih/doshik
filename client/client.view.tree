@@ -7,6 +7,7 @@ $doshik_client $mol_book2_catalog
 		<= Zen $mol_button_minor
 			sub /
 				<= Zen_icon $mol_icon_airballoon
+		<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
 	spreads *
 		steps <= Steps $mol_page
 			title \Шаги
