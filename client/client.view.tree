@@ -1,2 +1,15 @@
 $doshik_client $mol_book2_catalog
 	menu_title \ДоШик
+	plugins /
+		<= Theme $mol_theme_auto
+	menu_tools /
+		<= Lights $mol_lights_toggle
+		<= Zen $mol_button_minor
+			sub /
+				<= Zen_icon $mol_icon_airballoon
+	spreads *
+		steps <= Steps $mol_page
+			title \Шаги
+		foundations <= Foundations $mol_page
+			title \Фонды
+
