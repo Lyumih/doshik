@@ -175,7 +175,10 @@
     "$mol_maybe",
     "$mol_icon_brightness_6",
     "$mol_icon_brightness",
-    "$mol_icon_airballoon"
+    "$mol_icon_airballoon",
+    "$mol_link_source",
+    "$mol_icon_github_circle",
+    "$mol_icon_github"
   ],
   "dependencies": {
     "jsdom": "*",

@@ -2033,6 +2033,20 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_icon_github_circle extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_link_source extends $mol_link {
+        hint(): string;
+        sub(): readonly any[];
+        Icon(): $mol_icon_github_circle;
+    }
+}
+
+declare namespace $ {
     class $doshik_client extends $mol_book2_catalog {
         menu_title(): string;
         plugins(): readonly any[];
@@ -2042,6 +2056,7 @@ declare namespace $ {
         Lights(): $$.$mol_lights_toggle;
         Zen_icon(): $mol_icon_airballoon;
         Zen(): $mol_button_minor;
+        GitHub(): $mol_link_source;
         Steps(): $mol_page;
         Foundations(): $mol_page;
     }
