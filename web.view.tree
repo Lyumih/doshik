@@ -311,5 +311,45 @@ $mol_book2_catalog $mol_book2
 		sub /
 			<= Spread_close_icon $mol_icon_cross
 
+$mol_theme_auto $mol_plugin
+	attr * mol_theme <= theme \
+
+$mol_check $mol_button_minor
+	attr *
+		^
+		mol_check_checked <= checked? false
+		aria-checked <= aria_checked \false
+		role <= aria_role \checkbox
+	sub /$mol_view_content
+		<= Icon null
+		<= label /
+			<= Title $mol_view
+				sub /
+					<= title \
+
+$mol_check_icon $mol_check
+
+$mol_icon_brightness_6 $mol_icon path \M12,18V6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z
+
+$mol_lights_toggle $mol_check_icon
+	Icon <= Lights_icon $mol_icon_brightness_6
+	hint @ \Toggle lights
+	checked? <=> lights? false
+
+$mol_icon_airballoon $mol_icon path \M11,23C9.9,23 9,22.1 9,21V19H15V21C15,22.1 14.1,23 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16C15,17.1 14.1,18 13,18H11C9.9,18 9,17.1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z
+
 $doshik_client $mol_book2_catalog
 	menu_title \ДоШик
+	plugins /
+		<= Theme $mol_theme_auto
+	menu_tools /
+		<= Lights $mol_lights_toggle
+		<= Zen $mol_button_minor
+			sub /
+				<= Zen_icon $mol_icon_airballoon
+	spreads *
+		steps <= Steps $mol_page
+			title \Шаги
+		foundations <= Foundations $mol_page
+			title \Фонды
+
