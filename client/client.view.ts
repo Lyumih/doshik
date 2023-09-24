@@ -6,8 +6,9 @@ namespace $.$$ {
 			console.log('Zen mode')
 		}
 
+		sub(): readonly any[] {
+			return [this.zen() ? this.Zen() : this.Full()]
+		}
 
-		// Full() {
-		// }
 	}
 }
