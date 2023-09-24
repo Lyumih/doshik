@@ -3,7 +3,6 @@ namespace $.$$ {
 
 		change_zen_mod() {
 			this.zen(!this.zen())
-			console.log('Zen mode')
 		}
 
 		sub(): readonly any[] {
