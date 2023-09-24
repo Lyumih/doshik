@@ -6644,6 +6644,18 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_icon_airballoon extends $mol_icon {
+        path() {
+            return "M11,23C9.9,23 9,22.1 9,21V19H15V21C15,22.1 14.1,23 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16C15,17.1 14.1,18 13,18H11C9.9,18 9,17.1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z";
+        }
+    }
+    $.$mol_icon_airballoon = $mol_icon_airballoon;
+})($ || ($ = {}));
+//mol/icon/airballoon/-view.tree/airballoon.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_check extends $mol_button_minor {
         attr() {
             return {
@@ -6812,18 +6824,6 @@ var $;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 //mol/lights/toggle/toggle.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_airballoon extends $mol_icon {
-        path() {
-            return "M11,23C9.9,23 9,22.1 9,21V19H15V21C15,22.1 14.1,23 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16C15,17.1 14.1,18 13,18H11C9.9,18 9,17.1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z";
-        }
-    }
-    $.$mol_icon_airballoon = $mol_icon_airballoon;
-})($ || ($ = {}));
-//mol/icon/airballoon/-view.tree/airballoon.view.tree.ts
 ;
 "use strict";
 var $;
@@ -9698,6 +9698,402 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_labeler extends $mol_list {
+        rows() {
+            return [
+                this.Label(),
+                this.Content()
+            ];
+        }
+        label() {
+            return [
+                this.title()
+            ];
+        }
+        Label() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 32;
+            obj.sub = () => this.label();
+            return obj;
+        }
+        content() {
+            return [];
+        }
+        Content() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 24;
+            obj.sub = () => this.content();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_labeler.prototype, "Label", null);
+    __decorate([
+        $mol_mem
+    ], $mol_labeler.prototype, "Content", null);
+    $.$mol_labeler = $mol_labeler;
+})($ || ($ = {}));
+//mol/labeler/-view.tree/labeler.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/labeler/labeler.view.css", "[mol_labeler] {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: stretch;\n\tcursor: inherit;\n}\n\n[mol_labeler_label] {\n\tmin-height: 2rem;\n\tcolor: var(--mol_theme_shade);\n\tpadding: .5rem .75rem 0;\n\tgap: 0 var(--mol_gap_block);\n\tflex-wrap: wrap;\n}\n\n[mol_labeler_content] {\n\tdisplay: flex;\n\tpadding: var(--mol_gap_text);\n}\n");
+})($ || ($ = {}));
+//mol/labeler/-css/labeler.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_form_field extends $mol_labeler {
+        bids() {
+            return [];
+        }
+        label() {
+            return [
+                this.name(),
+                this.Bid()
+            ];
+        }
+        content() {
+            return [
+                this.control()
+            ];
+        }
+        name() {
+            return "";
+        }
+        bid() {
+            return "";
+        }
+        Bid() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.bid()
+            ];
+            return obj;
+        }
+        control() {
+            return null;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_form_field.prototype, "Bid", null);
+    $.$mol_form_field = $mol_form_field;
+})($ || ($ = {}));
+//mol/form/field/-view.tree/field.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_form_field extends $.$mol_form_field {
+            bid() {
+                return this.bids().filter(Boolean)[0] ?? '';
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_form_field.prototype, "bid", null);
+        $$.$mol_form_field = $mol_form_field;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/form/field/field.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/form/field/field.view.css", "[mol_form_field] {\n\talign-items: stretch;\n}\n\n[mol_form_field_bid] {\n\tcolor: var(--mol_theme_focus);\n\tdisplay: inline-block;\n\ttext-shadow: 0 0;\n}\n\n[mol_form_field_content] {\n\tborder-radius: var(--mol_gap_round);\n}\n");
+})($ || ($ = {}));
+//mol/form/field/-css/field.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_row extends $mol_view {
+    }
+    $.$mol_row = $mol_row;
+})($ || ($ = {}));
+//mol/row/-view.tree/row.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/row/row.view.css", "[mol_row] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\talign-items: flex-start;\n\talign-content: flex-start;\n\tjustify-content: flex-start;\n\tpadding: var(--mol_gap_block);\n\tgap: var(--mol_gap_block);\n\tflex: 0 0 auto;\n\tbox-sizing: border-box;\n\tmax-width: 100%;\n}\n\n[mol_row] > * {\n\tmax-width: 100%;\n}\n");
+})($ || ($ = {}));
+//mol/row/-css/row.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_form extends $mol_list {
+        submit_allowed() {
+            return true;
+        }
+        submit_blocked() {
+            return false;
+        }
+        event() {
+            return {
+                ...super.event(),
+                keydown: (event) => this.keydown(event)
+            };
+        }
+        submit(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        rows() {
+            return [
+                this.Body(),
+                this.Foot()
+            ];
+        }
+        keydown(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        form_fields() {
+            return [];
+        }
+        body() {
+            return this.form_fields();
+        }
+        Body() {
+            const obj = new this.$.$mol_list();
+            obj.sub = () => this.body();
+            return obj;
+        }
+        buttons() {
+            return [];
+        }
+        foot() {
+            return this.buttons();
+        }
+        Foot() {
+            const obj = new this.$.$mol_row();
+            obj.sub = () => this.foot();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "submit", null);
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "keydown", null);
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "Body", null);
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "Foot", null);
+    $.$mol_form = $mol_form;
+})($ || ($ = {}));
+//mol/form/-view.tree/form.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_form extends $.$mol_form {
+            form_fields() {
+                return [...this.view_find(view => view instanceof $mol_form_field)]
+                    .map(path => path[path.length - 1]);
+            }
+            submit_allowed() {
+                return this.form_fields().every(field => !field.bid());
+            }
+            submit_blocked() {
+                return !this.submit_allowed();
+            }
+            keydown(next) {
+                if (next.ctrlKey && next.keyCode === $mol_keyboard_code.enter && !this.submit_blocked())
+                    this.submit(event);
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_form.prototype, "form_fields", null);
+        __decorate([
+            $mol_mem
+        ], $mol_form.prototype, "submit_allowed", null);
+        $$.$mol_form = $mol_form;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/form/form.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/form/form.view.css", "[mol_form] {\r\n\tgap: var(--mol_gap_block);\r\n}\r\n\r\n[mol_form_body] {\r\n\tgap: var(--mol_gap_block);\r\n}");
+})($ || ($ = {}));
+//mol/form/-css/form.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $doshik_client_found extends $mol_page {
+        title() {
+            return "Фонды";
+        }
+        body() {
+            return [
+                this.You_found(),
+                this.Make_auto(),
+                this.Active_founds_label(),
+                this.Active_founds(),
+                this.Waiting_founds_label(),
+                this.New_founds(),
+                this.Offer_found_form()
+            ];
+        }
+        you_found() {
+            return "# Ваш фонд: **Лиза Алерт**";
+        }
+        You_found() {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.you_found();
+            return obj;
+        }
+        Make_auto() {
+            const obj = new this.$.$mol_button_minor();
+            obj.title = () => "Выбирать фонд автоматически?";
+            return obj;
+        }
+        Active_founds_label() {
+            const obj = new this.$.$mol_text();
+            obj.text = () => "# Фонды, с которыми мы уже работаем";
+            return obj;
+        }
+        Liza_alert() {
+            const obj = new this.$.$mol_link_iconed();
+            obj.title = () => "Лиза Алерт";
+            obj.uri = () => "https://lizaalert.org/";
+            return obj;
+        }
+        Shag_v_zhizn() {
+            const obj = new this.$.$mol_link_iconed();
+            obj.title = () => "Шаг в жизнь";
+            obj.uri = () => "https://shag-v-zhizn.ru/";
+            return obj;
+        }
+        Active_founds() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => [
+                this.Liza_alert(),
+                this.Shag_v_zhizn()
+            ];
+            return obj;
+        }
+        Waiting_founds_label() {
+            const obj = new this.$.$mol_text();
+            obj.text = () => "# Фонды, которые скоро добавим в работу";
+            return obj;
+        }
+        Chance() {
+            const obj = new this.$.$mol_link_iconed();
+            obj.title = () => "Подари Шанс";
+            obj.uri = () => "https://chance.su/";
+            return obj;
+        }
+        New_founds() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => [
+                this.Chance()
+            ];
+            return obj;
+        }
+        Offer_fond_link() {
+            const obj = new this.$.$mol_string();
+            return obj;
+        }
+        Offer_fond_field() {
+            const obj = new this.$.$mol_form_field();
+            obj.name = () => "Желаете добавить свой фонд?";
+            obj.Content = () => this.Offer_fond_link();
+            return obj;
+        }
+        Offer_found_add() {
+            const obj = new this.$.$mol_button_minor();
+            obj.title = () => "Добавить новый фонд";
+            return obj;
+        }
+        Offer_found_form() {
+            const obj = new this.$.$mol_form();
+            obj.form_fields = () => [
+                this.Offer_fond_field()
+            ];
+            obj.buttons = () => [
+                this.Offer_found_add()
+            ];
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "You_found", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Make_auto", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Active_founds_label", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Liza_alert", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Shag_v_zhizn", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Active_founds", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Waiting_founds_label", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Chance", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "New_founds", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Offer_fond_link", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Offer_fond_field", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Offer_found_add", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Offer_found_form", null);
+    $.$doshik_client_found = $doshik_client_found;
+})($ || ($ = {}));
+//doshik/client/found/-view.tree/found.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $doshik_client_found extends $.$doshik_client_found {
+        }
+        $$.$doshik_client_found = $doshik_client_found;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//doshik/client/found/found.view.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_text_list extends $mol_text {
         auto_scroll() {
             return null;
@@ -9763,8 +10159,12 @@ var $;
         }
         menu_tools() {
             return [
+                this.Zen()
+            ];
+        }
+        menu_foot() {
+            return [
                 this.Lights(),
-                this.Zen(),
                 this.GitHub()
             ];
         }
@@ -9776,10 +10176,6 @@ var $;
         }
         Theme() {
             const obj = new this.$.$mol_theme_auto();
-            return obj;
-        }
-        Lights() {
-            const obj = new this.$.$mol_lights_toggle();
             return obj;
         }
         change_zen_mod(next) {
@@ -9797,6 +10193,10 @@ var $;
             obj.sub = () => [
                 this.Zen_icon()
             ];
+            return obj;
+        }
+        Lights() {
+            const obj = new this.$.$mol_lights_toggle();
             return obj;
         }
         GitHub() {
@@ -9845,8 +10245,7 @@ var $;
             return obj;
         }
         Foundations_page() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => "Фонды";
+            const obj = new this.$.$doshik_client_found();
             return obj;
         }
     }
@@ -9858,9 +10257,6 @@ var $;
     ], $doshik_client.prototype, "Theme", null);
     __decorate([
         $mol_mem
-    ], $doshik_client.prototype, "Lights", null);
-    __decorate([
-        $mol_mem
     ], $doshik_client.prototype, "change_zen_mod", null);
     __decorate([
         $mol_mem
@@ -9868,6 +10264,9 @@ var $;
     __decorate([
         $mol_mem
     ], $doshik_client.prototype, "Zen", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client.prototype, "Lights", null);
     __decorate([
         $mol_mem
     ], $doshik_client.prototype, "GitHub", null);

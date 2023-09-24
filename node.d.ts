@@ -2097,6 +2097,12 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $mol_icon_airballoon extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
     class $mol_check extends $mol_button_minor {
         attr(): Record<string, any>;
         sub(): readonly $mol_view_content[];
@@ -2153,12 +2159,6 @@ declare namespace $ {
 declare namespace $.$$ {
     class $mol_lights_toggle extends $.$mol_lights_toggle {
         lights(next?: boolean): boolean;
-    }
-}
-
-declare namespace $ {
-    class $mol_icon_airballoon extends $mol_icon {
-        path(): string;
     }
 }
 
@@ -2986,6 +2986,103 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_labeler extends $mol_list {
+        rows(): readonly any[];
+        label(): readonly $mol_view_content[];
+        Label(): $mol_view;
+        content(): readonly any[];
+        Content(): $mol_view;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_form_field extends $mol_labeler {
+        bids(): readonly string[];
+        label(): readonly any[];
+        content(): readonly any[];
+        name(): string;
+        bid(): string;
+        Bid(): $mol_view;
+        control(): any;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_form_field extends $.$mol_form_field {
+        bid(): string;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_row extends $mol_view {
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_form extends $mol_list {
+        submit_allowed(): boolean;
+        submit_blocked(): boolean;
+        event(): Record<string, any>;
+        submit(event?: any): any;
+        rows(): readonly any[];
+        keydown(event?: any): any;
+        form_fields(): readonly $mol_form_field[];
+        body(): readonly $mol_form_field[];
+        Body(): $$.$mol_list;
+        buttons(): readonly $mol_view[];
+        foot(): readonly $mol_view[];
+        Foot(): $mol_row;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_form extends $.$mol_form {
+        form_fields(): readonly $mol_form_field[];
+        submit_allowed(): boolean;
+        submit_blocked(): boolean;
+        keydown(next: KeyboardEvent): void;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $doshik_client_found extends $mol_page {
+        title(): string;
+        body(): readonly any[];
+        you_found(): string;
+        You_found(): $$.$mol_text;
+        Make_auto(): $mol_button_minor;
+        Active_founds_label(): $$.$mol_text;
+        Liza_alert(): $$.$mol_link_iconed;
+        Shag_v_zhizn(): $$.$mol_link_iconed;
+        Active_founds(): $$.$mol_list;
+        Waiting_founds_label(): $$.$mol_text;
+        Chance(): $$.$mol_link_iconed;
+        New_founds(): $$.$mol_list;
+        Offer_fond_link(): $$.$mol_string;
+        Offer_fond_field(): $$.$mol_form_field;
+        Offer_found_add(): $mol_button_minor;
+        Offer_found_form(): $$.$mol_form;
+    }
+}
+
+declare namespace $.$$ {
+    class $doshik_client_found extends $.$doshik_client_found {
+    }
+}
+
+declare namespace $ {
     class $mol_text_list extends $mol_text {
         auto_scroll(): any;
         attr(): Record<string, any>;
@@ -3007,12 +3104,13 @@ declare namespace $ {
         doshik(next?: any): number;
         plugins(): readonly any[];
         menu_tools(): readonly any[];
+        menu_foot(): readonly any[];
         spreads(): Record<string, any>;
         Theme(): $$.$mol_theme_auto;
-        Lights(): $$.$mol_lights_toggle;
         change_zen_mod(next?: any): any;
         Zen_icon(): $mol_icon_airballoon;
         Zen(): $mol_button_minor;
+        Lights(): $$.$mol_lights_toggle;
         GitHub(): $mol_link_source;
         all_doshik_label(): string;
         All_doshik(): $$.$mol_text;
@@ -3021,7 +3119,7 @@ declare namespace $ {
         add_today_steps(next?: any): any;
         Add_doshik_save(): $mol_button_major;
         Steps_page(): $mol_page;
-        Foundations_page(): $mol_page;
+        Foundations_page(): $$.$doshik_client_found;
     }
 }
 
