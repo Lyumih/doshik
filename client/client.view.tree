@@ -1,25 +1,25 @@
-$doshik_client $mol_book2_catalog
-	menu_title \ДоШик
+$doshik_client $mol_view
 	doshik? 10000
-	plugins /
-		<= Theme $mol_theme_auto
-	menu_tools /
-		<= Zen $mol_button_minor
-			click? <= change_zen_mod? null
-			sub /
-				<= Zen_icon $mol_icon_airballoon
-	menu_foot /
-		<= Lights $mol_lights_toggle
-		<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
-	spreads *
-		steps_page <= Steps_page $mol_page
-			title \Шаги
+	zen? true
+	sub /
+		<= Zen $mol_page
+			title \ДоШик Zen
 			body /
-				<= All_doshik $mol_text text <= all_doshik_label \
-				<= Add_doshik $mol_number
-					value? <=> add_doshik? 0
-					value_max 40000
-				<= Add_doshik_save $mol_button_major
-					title \Добавить шаги за сегодня
-					click? <= add_today_steps? null
-		found_page <= Found_page $doshik_client_found
+				<= Zen_steps $doshik_client_steps
+					doshik_value? <=> doshik?
+		<= Full $mol_book2_catalog
+			menu_title \ДоШик
+			plugins /
+				<= Theme $mol_theme_auto
+			menu_tools /
+				<= Zen_switcher $mol_button_minor
+					click? <= change_zen_mod? null
+					sub /
+						<= Zen_icon $mol_icon_airballoon
+			menu_foot /
+				<= Lights $mol_lights_toggle
+				<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
+			spreads *
+				steps_page <= Steps_page $doshik_client_steps
+					doshik_value? <=> doshik?
+				found_page <= Found_page $doshik_client_found

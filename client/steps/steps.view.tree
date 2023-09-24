@@ -1,0 +1,11 @@
+$doshik_client_steps $mol_page
+	doshik_value? 10000
+	title \Шаги
+	body /
+		<= All_doshik $mol_text text <= all_doshik_label \
+		<= Add_doshik $mol_number
+			value? <=> add_doshik? 0
+			value_max 40000
+		<= Add_doshik_save $mol_button_major
+			title \Добавить шаги за сегодня
+			click? <= add_today_steps? null
