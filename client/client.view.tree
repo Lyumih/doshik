@@ -1,6 +1,6 @@
 $doshik_client $mol_view
 	doshik? 10000
-	zen? true
+	zen? false
 	sub /
 		<= Zen $doshik_client_steps
 			title \ДоШик Zen
