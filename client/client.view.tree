@@ -22,4 +22,4 @@ $doshik_client $mol_book2_catalog
 				<= Add_doshik_save $mol_button_major
 					title \Добавить шаги за сегодня
 					click? <= add_today_steps? null
-		foundations_page <= Foundations_page $doshik_client_found
+		found_page <= Found_page $doshik_client_found

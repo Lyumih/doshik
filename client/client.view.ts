@@ -10,7 +10,7 @@ namespace $.$$ {
 		}
 
 		all_doshik_label() {
-			return `Всего активных шагов: ${this.doshik()}`
+			return `### Всего активных шагов: *${this.doshik()}*`
 		}
 	}
 }
