@@ -2,6 +2,7 @@ $doshik_client_found $mol_page
 	title \Фонды
 	body /
 		<= You_found $mol_text text <= you_found \# Ваш фонд: **Лиза Алерт**
+		-
 		<= Make_auto $mol_button_minor
 			title \Выбирать фонд автоматически?
 		<= Active_founds_label $mol_text text \# Фонды, с которыми мы уже работаем
@@ -24,10 +25,13 @@ $doshik_client_found $mol_page
 					uri \https://chance.su/
 		<= Offer_found_form $mol_form
 			form_fields /
-				<= Offer_fond_field $mol_form_field
-					name \Желаете добавить свой фонд?
-					Content <= Offer_fond_link $mol_string
+				<= Offer_found_name_field $mol_form_field
+					name \Имя нового фонда
+					Content <= Offer_found_name $mol_string
+				<= Offer_found_link_field $mol_form_field
+					name \Ссылка на фонд
+					Content <= Offer_found_link $mol_string
 			buttons /
 				<= Offer_found_add $mol_button_minor
-					title \Добавить новый фонд
+					title \Предложить новый фонд
 
