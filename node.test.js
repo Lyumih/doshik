@@ -10876,7 +10876,7 @@ var $;
         zen(next) {
             if (next !== undefined)
                 return next;
-            return true;
+            return false;
         }
         sub() {
             return [
@@ -11018,6 +11018,10 @@ var $;
         class $doshik_client extends $.$doshik_client {
             change_zen_mod() {
                 this.zen(!this.zen());
+                $mol_state_local.value('zen', this.zen());
+            }
+            zen(next) {
+                return $mol_state_local.value(this.state_key('zen'), next) || false;
             }
             sub() {
                 return [this.zen() ? this.Zen() : this.Full()];

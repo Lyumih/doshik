@@ -3014,6 +3014,7 @@ declare namespace $ {
 declare namespace $.$$ {
     class $doshik_client extends $.$doshik_client {
         change_zen_mod(): void;
+        zen(next?: boolean): boolean;
         sub(): readonly any[];
     }
 }
