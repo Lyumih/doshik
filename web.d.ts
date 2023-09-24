@@ -2940,8 +2940,10 @@ declare namespace $ {
         Waiting_founds_label(): $$.$mol_text;
         Chance(): $$.$mol_link_iconed;
         New_founds(): $$.$mol_list;
-        Offer_fond_link(): $$.$mol_string;
-        Offer_fond_field(): $$.$mol_form_field;
+        Offer_found_name(): $$.$mol_string;
+        Offer_found_name_field(): $$.$mol_form_field;
+        Offer_found_link(): $$.$mol_string;
+        Offer_found_link_field(): $$.$mol_form_field;
         Offer_found_add(): $mol_button_minor;
         Offer_found_form(): $$.$mol_form;
     }
@@ -2989,7 +2991,7 @@ declare namespace $ {
         add_today_steps(next?: any): any;
         Add_doshik_save(): $mol_button_major;
         Steps_page(): $mol_page;
-        Foundations_page(): $$.$doshik_client_found;
+        Found_page(): $$.$doshik_client_found;
     }
 }
 

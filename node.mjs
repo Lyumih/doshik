@@ -10634,25 +10634,36 @@ var $;
             ];
             return obj;
         }
-        Offer_fond_link() {
+        Offer_found_name() {
             const obj = new this.$.$mol_string();
             return obj;
         }
-        Offer_fond_field() {
+        Offer_found_name_field() {
             const obj = new this.$.$mol_form_field();
-            obj.name = () => "Желаете добавить свой фонд?";
-            obj.Content = () => this.Offer_fond_link();
+            obj.name = () => "Имя нового фонда";
+            obj.Content = () => this.Offer_found_name();
+            return obj;
+        }
+        Offer_found_link() {
+            const obj = new this.$.$mol_string();
+            return obj;
+        }
+        Offer_found_link_field() {
+            const obj = new this.$.$mol_form_field();
+            obj.name = () => "Ссылка на фонд";
+            obj.Content = () => this.Offer_found_link();
             return obj;
         }
         Offer_found_add() {
             const obj = new this.$.$mol_button_minor();
-            obj.title = () => "Добавить новый фонд";
+            obj.title = () => "Предложить новый фонд";
             return obj;
         }
         Offer_found_form() {
             const obj = new this.$.$mol_form();
             obj.form_fields = () => [
-                this.Offer_fond_field()
+                this.Offer_found_name_field(),
+                this.Offer_found_link_field()
             ];
             obj.buttons = () => [
                 this.Offer_found_add()
@@ -10689,10 +10700,16 @@ var $;
     ], $doshik_client_found.prototype, "New_founds", null);
     __decorate([
         $mol_mem
-    ], $doshik_client_found.prototype, "Offer_fond_link", null);
+    ], $doshik_client_found.prototype, "Offer_found_name", null);
     __decorate([
         $mol_mem
-    ], $doshik_client_found.prototype, "Offer_fond_field", null);
+    ], $doshik_client_found.prototype, "Offer_found_name_field", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Offer_found_link", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client_found.prototype, "Offer_found_link_field", null);
     __decorate([
         $mol_mem
     ], $doshik_client_found.prototype, "Offer_found_add", null);
@@ -10795,7 +10812,7 @@ var $;
         spreads() {
             return {
                 steps_page: this.Steps_page(),
-                foundations_page: this.Foundations_page()
+                found_page: this.Found_page()
             };
         }
         Theme() {
@@ -10868,7 +10885,7 @@ var $;
             ];
             return obj;
         }
-        Foundations_page() {
+        Found_page() {
             const obj = new this.$.$doshik_client_found();
             return obj;
         }
@@ -10914,7 +10931,7 @@ var $;
     ], $doshik_client.prototype, "Steps_page", null);
     __decorate([
         $mol_mem
-    ], $doshik_client.prototype, "Foundations_page", null);
+    ], $doshik_client.prototype, "Found_page", null);
     $.$doshik_client = $doshik_client;
 })($ || ($ = {}));
 //doshik/client/-view.tree/client.view.tree.ts
@@ -10933,7 +10950,7 @@ var $;
                     this.doshik(this.doshik() + this.add_doshik());
             }
             all_doshik_label() {
-                return `Всего активных шагов: ${this.doshik()}`;
+                return `### Всего активных шагов: *${this.doshik()}*`;
             }
         }
         $$.$doshik_client = $doshik_client;
