@@ -4,11 +4,12 @@ $doshik_client $mol_book2_catalog
 	plugins /
 		<= Theme $mol_theme_auto
 	menu_tools /
-		<= Lights $mol_lights_toggle
 		<= Zen $mol_button_minor
 			click? <= change_zen_mod? null
 			sub /
 				<= Zen_icon $mol_icon_airballoon
+	menu_foot /
+		<= Lights $mol_lights_toggle
 		<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
 	spreads *
 		steps_page <= Steps_page $mol_page
@@ -21,6 +22,4 @@ $doshik_client $mol_book2_catalog
 				<= Add_doshik_save $mol_button_major
 					title \Добавить шаги за сегодня
 					click? <= add_today_steps? null
-		foundations_page <= Foundations_page $mol_page
-			title \Фонды
-
+		foundations_page <= Foundations_page $doshik_client_found
