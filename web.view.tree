@@ -800,14 +800,31 @@ $doshik_client_found $mol_page
 					title \Предложить новый фонд
 
 
+$mol_icon_download $mol_icon path \M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z
+
+$mol_button_download $mol_button_minor
+	blob null
+	uri \
+	file_name \blob.bin
+	sub /
+		<= Icon $mol_icon_download
+		<= title \
+
+$doshik_company_report $mol_page
+	title \Отчёт
+	body /
+		<= Download_report $mol_button_download
+			file_name \dosha_report.txt
+			title \Скачать отчёт для оплаты
+			blob <= download $mol_blob
+
 $doshik_company $mol_book2_catalog
 	menu_title \ДоШик Компания
 	param \company
 	spreads *
 		people_page <= People_page $mol_page
 			title \Пользователи
-		report_page <= Report_page $mol_page
-			title \Отчёт
+		report_page <= Report_page $doshik_company_report
 
 $doshik_client $mol_book2_catalog
 	doshik? 10000

@@ -219,7 +219,13 @@
     "$mol_form",
     "$mol_row",
     "$mol_labeler",
-    "$doshik_company"
+    "$doshik_company",
+    "$doshik_company_report",
+    "$mol_button_download",
+    "$mol_jsx",
+    "$mol_type_partial_deep",
+    "$mol_type_partial",
+    "$mol_icon_download"
   ],
   "dependencies": {
     "jsdom": "*",
