@@ -1,28 +1,15 @@
-$doshik_client $mol_view
+$doshik_client $mol_book2_catalog
 	doshik? 10000
 	zen? false
-	sub /
-		<= Zen $doshik_client_steps
-			title \ДоШик Zen
-			tools /
-				<= Zen_switcher_on $mol_button_minor
-					click? <= change_zen_mod? null
-					sub /
-						<= Zen_icon_on $mol_icon_airballoon
+	menu_title \ДоШик
+	param \client
+	plugins /
+		<= Theme $mol_theme_auto
+	menu_foot /
+		<= Lights $mol_lights_toggle
+		<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
+	spreads *
+		steps_page <= Steps_page $doshik_client_steps
 			doshik_value? <=> doshik?
-		<= Full $mol_book2_catalog
-			menu_title \ДоШик
-			plugins /
-				<= Theme $mol_theme_auto
-			menu_tools /
-				<= Zen_switcher $mol_button_minor
-					click? <= change_zen_mod? null
-					sub /
-						<= Zen_icon $mol_icon_airballoon
-			menu_foot /
-				<= Lights $mol_lights_toggle
-				<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
-			spreads *
-				steps_page <= Steps_page $doshik_client_steps
-					doshik_value? <=> doshik?
-				found_page <= Found_page $doshik_client_found
+		found_page <= Found_page $doshik_client_found
+		company_page <= Company_page $doshik_company
