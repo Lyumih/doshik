@@ -858,7 +858,6 @@ $doshik_client $mol_book2_catalog
 	doshik? 10000
 	menu_title \ДоШик
 	param \client
-	Spread_default \
 	plugins /
 		<= Theme $mol_theme_auto
 	menu_tools /

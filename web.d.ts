@@ -3131,7 +3131,6 @@ declare namespace $ {
         doshik(next?: any): number;
         menu_title(): string;
         param(): string;
-        Spread_default(): string;
         plugins(): readonly any[];
         menu_tools(): readonly any[];
         menu_foot(): readonly any[];

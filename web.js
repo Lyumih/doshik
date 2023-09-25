@@ -10716,9 +10716,6 @@ var $;
         param() {
             return "client";
         }
-        Spread_default() {
-            return "";
-        }
         plugins() {
             return [
                 this.Theme()
