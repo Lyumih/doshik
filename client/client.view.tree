@@ -2,16 +2,22 @@ $doshik_client $mol_book2_catalog
 	doshik? 10000
 	menu_title \ДоШик
 	param \client
+	Spread_default \
 	plugins /
 		<= Theme $mol_theme_auto
 	menu_tools /
 		<= Chat $mol_chat
-			seed \dosha_chat
+			seed \dosha_chat_v1
+			pages => chat_pages
 	menu_foot /
 		<= Lights $mol_lights_toggle
 		<= GitHub $mol_link_source uri \https://github.com/Lyumih/doshik
 	spreads *
-		steps_page <= Steps_page $doshik_client_steps
+		steps <= Steps_page $doshik_client_steps
 			doshik_value? <=> doshik?
-		found_page <= Found_page $doshik_client_found
+		found <= Found_page $doshik_client_found
 		company_page <= Company_page $doshik_company
+			menu_title \Компания
+		chat <= Chat_page $mol_view
+			title \Чат
+			sub <= chat_pages
