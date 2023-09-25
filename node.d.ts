@@ -3261,17 +3261,20 @@ declare namespace $ {
         doshik(next?: any): number;
         menu_title(): string;
         param(): string;
+        Spread_default(): string;
         plugins(): readonly any[];
         menu_tools(): readonly any[];
         menu_foot(): readonly any[];
         spreads(): Record<string, any>;
         Theme(): $$.$mol_theme_auto;
+        chat_pages(): $mol_page[];
         Chat(): $$.$mol_chat;
         Lights(): $$.$mol_lights_toggle;
         GitHub(): $mol_link_source;
         Steps_page(): $$.$doshik_client_steps;
         Found_page(): $$.$doshik_client_found;
         Company_page(): $doshik_company;
+        Chat_page(): $mol_view;
     }
 }
 

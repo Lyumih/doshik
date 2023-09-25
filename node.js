@@ -11340,6 +11340,9 @@ var $;
         param() {
             return "client";
         }
+        Spread_default() {
+            return "";
+        }
         plugins() {
             return [
                 this.Theme()
@@ -11358,18 +11361,22 @@ var $;
         }
         spreads() {
             return {
-                steps_page: this.Steps_page(),
-                found_page: this.Found_page(),
-                company_page: this.Company_page()
+                steps: this.Steps_page(),
+                found: this.Found_page(),
+                company_page: this.Company_page(),
+                chat: this.Chat_page()
             };
         }
         Theme() {
             const obj = new this.$.$mol_theme_auto();
             return obj;
         }
+        chat_pages() {
+            return this.Chat().pages();
+        }
         Chat() {
             const obj = new this.$.$mol_chat();
-            obj.seed = () => "dosha_chat";
+            obj.seed = () => "dosha_chat_v1";
             return obj;
         }
         Lights() {
@@ -11392,6 +11399,13 @@ var $;
         }
         Company_page() {
             const obj = new this.$.$doshik_company();
+            obj.menu_title = () => "Компания";
+            return obj;
+        }
+        Chat_page() {
+            const obj = new this.$.$mol_view();
+            obj.title = () => "Чат";
+            obj.sub = () => this.chat_pages();
             return obj;
         }
     }
@@ -11419,6 +11433,9 @@ var $;
     __decorate([
         $mol_mem
     ], $doshik_client.prototype, "Company_page", null);
+    __decorate([
+        $mol_mem
+    ], $doshik_client.prototype, "Chat_page", null);
     $.$doshik_client = $doshik_client;
 })($ || ($ = {}));
 //doshik/client/-view.tree/client.view.tree.ts
