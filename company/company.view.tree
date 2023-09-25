@@ -4,5 +4,4 @@ $doshik_company $mol_book2_catalog
 	spreads *
 		people_page <= People_page $mol_page
 			title \Пользователи
-		report_page <= Report_page $mol_page
-			title \Отчёт
+		report_page <= Report_page $doshik_company_report

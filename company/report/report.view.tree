@@ -1,0 +1,7 @@
+$doshik_company_report $mol_page
+	title \Отчёт
+	body /
+		<= Download_report $mol_button_download
+			file_name \dosha_report.txt
+			title \Скачать отчёт для оплаты
+			blob <= download $mol_blob
